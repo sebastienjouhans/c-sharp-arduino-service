@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinrou.io.Arduino", "Kinrou.io.Arduino\Kinrou.io.Arduino.csproj", "{5CDB843E-2379-469A-9623-FE2D6422E4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArduinoTest", "ArduinoTest\ArduinoTest.csproj", "{B3133AB5-25C6-4402-B286-40B68A7C43E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CDB843E-2379-469A-9623-FE2D6422E4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDB843E-2379-469A-9623-FE2D6422E4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDB843E-2379-469A-9623-FE2D6422E4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDB843E-2379-469A-9623-FE2D6422E4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3133AB5-25C6-4402-B286-40B68A7C43E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3133AB5-25C6-4402-B286-40B68A7C43E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3133AB5-25C6-4402-B286-40B68A7C43E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3133AB5-25C6-4402-B286-40B68A7C43E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
