@@ -71,8 +71,8 @@ namespace Kinrou.io.Arduino
         {
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadExisting();
-            Debug.WriteLine("Data Received:");
-            Debug.Write(indata);
+            //Debug.WriteLine("Data Received:");
+            //Debug.Write(indata);
             receivedData(this, new ArduinoServiceEventArgs(indata));
         }
 
@@ -114,7 +114,7 @@ namespace Kinrou.io.Arduino
                 _initTimer.Elapsed -= TimerElapsed;
                 _initTimer.Dispose();
                 _initTimer = null;
-                Debug.WriteLine("Arduino ready");
+                //Debug.WriteLine("Arduino ready");
                 _isInitialised = true;
                 initialisedSuccess(this);
             }
