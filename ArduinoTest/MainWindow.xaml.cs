@@ -23,7 +23,7 @@ namespace ArduinoTest
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ArduinoConnector arduino;
+        private ArduinoService arduino;
 
         private bool _isOn = false;
 
@@ -34,7 +34,7 @@ namespace ArduinoTest
 
         private void SetupArduino()
         {
-            arduino = new ArduinoConnector();
+            arduino = new ArduinoService();
             arduino.OnInitialisedSuccessHandler += ArduinoInitialisedSuccessHandler;
             arduino.OnInitialisedFailedHandler += ArduinoInitialisedFailedHandler;
         }
@@ -55,7 +55,7 @@ namespace ArduinoTest
 
         private void ArduinoDataReceived(object sender, EventArgs e)
         {
-            string data = ((ArduinoConnectorEventArgs)e).data;
+            string data = ((ArduinoServiceEventArgs)e).data;
             Application.Current.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() =>
             {
                 Debug.WriteLine(data);

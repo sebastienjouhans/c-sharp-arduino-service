@@ -9,7 +9,7 @@ using System.Timers;
 
 namespace Kinrou.io.Arduino
 {
-    public class ArduinoConnector
+    public class ArduinoService
     {
         public static string ARDUINO_PORT = "COM4";
         public static int ARDUINO_BAUD_RATE = 9600;
@@ -21,7 +21,7 @@ namespace Kinrou.io.Arduino
         private SerialPort _serialPort;
         private Timer _initTimer;
 
-        public delegate void ReceivedDataHandler(object sender, ArduinoConnectorEventArgs e);
+        public delegate void ReceivedDataHandler(object sender, ArduinoServiceEventArgs e);
         public event ReceivedDataHandler OnReceivedData;
 
         public delegate void InitialisedHandler(object sender);
@@ -29,14 +29,14 @@ namespace Kinrou.io.Arduino
         public event InitialisedHandler OnInitialisedFailedHandler;
 
 
-        public ArduinoConnector()
+        public ArduinoService()
         {
             _port = ARDUINO_PORT;
             _baudRate = ARDUINO_BAUD_RATE;
             Initialise();
         }
 
-        public ArduinoConnector(string port, int baudRate)
+        public ArduinoService(string port, int baudRate)
         {
             _port = port;
             _baudRate = baudRate;
@@ -73,7 +73,7 @@ namespace Kinrou.io.Arduino
             string indata = sp.ReadExisting();
             Debug.WriteLine("Data Received:");
             Debug.Write(indata);
-            receivedData(this, new ArduinoConnectorEventArgs(indata));
+            receivedData(this, new ArduinoServiceEventArgs(indata));
         }
 
 
@@ -95,7 +95,7 @@ namespace Kinrou.io.Arduino
         }
 
 
-        private void receivedData(object sender, ArduinoConnectorEventArgs e)
+        private void receivedData(object sender, ArduinoServiceEventArgs e)
         {
             if (OnReceivedData != null)
             {

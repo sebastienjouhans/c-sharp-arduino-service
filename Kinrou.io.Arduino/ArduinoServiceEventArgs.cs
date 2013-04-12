@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Kinrou.io.Arduino
 {
-     public class ArduinoConnectorEventArgs : EventArgs
+     public class ArduinoServiceEventArgs : EventArgs
     {
          public string data { get; private set; }
 
-         public ArduinoConnectorEventArgs(string data)
+         public ArduinoServiceEventArgs(string data)
          {
              this.data = data;
          }

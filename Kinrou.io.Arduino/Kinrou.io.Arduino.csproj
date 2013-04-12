@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArduinoConnector.cs" />
-    <Compile Include="ArduinoConnectorEventArgs.cs" />
+    <Compile Include="ArduinoService.cs" />
+    <Compile Include="ArduinoServiceEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
