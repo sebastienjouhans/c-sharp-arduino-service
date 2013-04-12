@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Kinrou.io.Arduino">
-      <HintPath>..\Kinrou.io.Arduino\bin\Debug\Kinrou.io.Arduino.dll</HintPath>
+    <Reference Include="Kinrou.io.ArduinoService">
+      <HintPath>..\Kinrou.io.ArduinoService\bin\Debug\Kinrou.io.ArduinoService.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Kinrou.io.Arduino</RootNamespace>
-    <AssemblyName>Kinrou.io.Arduino</AssemblyName>
+    <AssemblyName>Kinrou.io.ArduinoService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
