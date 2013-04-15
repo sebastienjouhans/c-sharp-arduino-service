@@ -30,6 +30,7 @@ namespace ArduinoTest
         public MainWindow()
         {
             InitializeComponent();
+            SetupArduino();
         }
 
         private void SetupArduino()
