@@ -24,6 +24,7 @@ namespace ArduinoTest
     public partial class MainWindow : Window
     {
         private ArduinoService arduino;
+        private bool _isBtnOn = false;
 
         public MainWindow()
         {
@@ -77,7 +78,17 @@ namespace ArduinoTest
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            arduino.Write("R");
+            if (_isBtnOn)
+            {
+                arduino.Write("l_down");
+                _isBtnOn = false;
+            }
+            else
+            {
+                arduino.Write("l_up");
+                _isBtnOn = true;
+            }
+
         }
     }
 }
