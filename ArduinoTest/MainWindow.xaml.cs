@@ -25,17 +25,27 @@ namespace ArduinoTest
     {
         private ArduinoService arduino;
 
-        private bool _isOn = false;
-
         public MainWindow()
         {
             InitializeComponent();
+
             SetupArduino();
         }
 
+        private void Log(string msg)
+        {
+            if(string.IsNullOrWhiteSpace( msg.Trim('\n') ))
+                return;
+            string timestamp = DateTime.Now.ToString("HH:mm:ss");
+            msg = string.Format("{0} : {1}", timestamp, msg);
+            log.Items.Add(msg);
+            log.ScrollIntoView(msg);
+        }
+
+
         private void SetupArduino()
         {
-            arduino = new ArduinoService();
+            arduino = new ArduinoService("COM3", 9600);
             arduino.OnInitialisedSuccessHandler += ArduinoInitialisedSuccessHandler;
             arduino.OnInitialisedFailedHandler += ArduinoInitialisedFailedHandler;
         }
@@ -44,7 +54,8 @@ namespace ArduinoTest
         {
             arduino.OnInitialisedSuccessHandler -= ArduinoInitialisedSuccessHandler;
             arduino.OnInitialisedFailedHandler -= ArduinoInitialisedFailedHandler;
-            arduino.OnReceivedData += ArduinoDataReceived;             
+            arduino.OnReceivedData += ArduinoDataReceived;
+            Debug.WriteLine("Arduino init");
         }
 
         private void ArduinoInitialisedFailedHandler(object sender)
@@ -59,25 +70,14 @@ namespace ArduinoTest
             string data = ((ArduinoServiceEventArgs)e).data;
             Application.Current.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(() =>
             {
-                Debug.WriteLine(data);
+                //Debug.WriteLine(data);
+                Log(data);
             }));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (arduino.isInitialised)
-            {
-                if (_isOn)
-                {
-                    arduino.Write("0");
-                    _isOn = false;
-                }
-                else
-                {
-                    arduino.Write("1");
-                    _isOn = true;
-                }
-            }
+            arduino.Write("R");
         }
     }
 }

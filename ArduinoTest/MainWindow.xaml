@@ -4,6 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <ListBox HorizontalAlignment="Left" Height="228" Margin="10,62,0,0" VerticalAlignment="Top" Width="497" x:Name="log"/>
 
     </Grid>
 </Window>
